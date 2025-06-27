@@ -1,0 +1,666 @@
+name: nine_workout
+description: "A new Flutter project."
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+# The following defines the version and build number for your application.
+# A version number is three numbers separated by dots, like 1.2.43
+# followed by an optional build number separated by a +.
+# Both the version and the builder number may be overridden in flutter
+# build by specifying --build-name and --build-number, respectively.
+# In Android, build-name is used as versionName while build-number used as versionCode.
+# Read more about Android versioning at https://developer.android.com/studio/publish/versioning
+# In iOS, build-name is used as CFBundleShortVersionString while build-number is used as CFBundleVersion.
+# Read more about iOS versioning at
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# In Windows, build-name is used as the major, minor, and patch parts
+# of the product and file versions while build-number is used as the build suffix.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.2 <4.0.0'
+
+# Dependencies specify other packages that your package needs in order to work.
+# To automatically upgrade your package dependencies to the latest versions
+# consider running `flutter pub upgrade --major-versions`. Alternatively,
+# dependencies can be manually updated by changing the version numbers below to
+# the latest version available on pub.dev. To see which dependencies have newer
+# versions available, run `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core: ^3.8.0  
+  permission_handler: ^11.4.0 # لإدارة أذونات النظام
+  flutter_local_notifications: ^18.0.1 # لإرسال الإشعارات (اختياري)
+  firebase_auth: ^5.5.1
+  cloud_firestore: ^5.6.5
+  provider: ^6.1.2
+  google_sign_in: ^6.2.2
+  image_picker: ^1.1.2
+  font_awesome_flutter: ^10.8.0
+  firebase_storage: ^12.4.4
+  supabase_flutter: ^2.8.4 
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^1.0.8
+  fluttericon: ^2.0.0
+  path_provider: ^2.1.5
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # The "flutter_lints" package below contains a set of recommended lints to
+  # encourage good coding practices. The lint set provided by the package is
+  # activated in the `analysis_options.yaml` file located at the root of your
+  # package. See that file for information about deactivating specific lint
+  # rules and activating additional ones.
+  flutter_lints: ^5.0.0
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+  assets:
+    - assets/new_muscle/bisebs_image.png
+    - assets/new_muscle/Chest_image.png
+    - assets/new_muscle/leg_image.png
+    - assets/workout_page_componant/boutton hilight.png
+    - assets/workout_page_componant/floating hilight.png
+    - assets/workout_page_componant/left shape.png
+    - assets/workout_page_componant/navigation bar.png
+    - assets/workout_page_componant/navigation shadow.png
+    - assets/workout_page_componant/profile image.png
+    - assets/workout_page_componant/right shape.png
+    - assets/workout_page_componant/new_right_shape.png
+    - assets/new_muscle/Scroll Group 6.png
+    - assets/nested_equipment/Pec-Deck-Fly.gif
+    - assets/nested_equipment/Lying-Chest-Press-Machine.gif
+    - assets/nested_equipment/Low-Cable-Crossover.gif
+    - assets/nested_equipment/Incline-Dumbbell-Press.gif
+    - assets/nested_equipment/Dumbbell-Squat.gif
+    - assets/nested_equipment/Dumbbell-Shoulder-Press.gif
+    - assets/nested_equipment/Dumbbell-Pullover.gif
+    - assets/workout_page_componant/Component 8 – 1.png
+    - assets/workout_page_componant/Group 36.png
+    - assets/workout_page_componant/Path 31.png
+    - assets/workout_page_componant/Rectangle 151.png
+    - assets/workout_page_componant/Path 32.png
+    - assets/IconImage/crown (1).png
+    - assets/IconImage/apple-logo (1).png
+    - assets/IconImage/apple15.png
+    - assets/IconImage/facebook (1).png
+    - assets/IconImage/search (2).png
+    - assets/workout_page_componant/Rectangle 65.png
+    - assets/workout_page_componant/Rectangle 6563.png
+    - assets/workout_page_componant/Rectangle 65444.png
+    - assets/workout_page_componant/Group 45.png
+    - assets/nested_equipment/Static-Lunge.gif
+    - assets/nested_equipment/Standing-Leg-Circles.gif
+    - assets/nested_equipment/One-Arm-Medicine-Ball-Slam.gif
+    - assets/nested_equipment/Medicine-Ball-Overhead-Throw.gif
+    - assets/nested_equipment/High-Knee-Lunge-on-Bosu-Ball.gif
+    - assets/nested_equipment/Dumbbell-Good-Morning.gif
+    - assets/nested_equipment/Dumbbell-Goblet-Squat.gif
+    - assets/nested_equipment/Barbell-Shoulder-Press.gif
+    - assets/nested_equipment/5-Dot-drills-agility-exercise.gif
+    - assets/new_muscle/Add_Image.png
+    - assets/IconImage/check-mark.png
+    - assets/IconImage/Rectangle-check-mark.png
+
+
+
+    #-------------------------------------------------------------------------------  
+
+
+        # Back Erector Spinae - main_Flexability
+    - Gifs/Back/Erector Spinae/main/main_Flexability/arm-leg-raise.gif
+    - Gifs/Back/Erector Spinae/main/main_Flexability/cat-cow.gif
+    - Gifs/Back/Erector Spinae/main/main_Flexability/Pike-to-Cobra.gif
+    - Gifs/Back/Erector Spinae/main/main_Flexability/Seated-Hamstring-Stretch.gif
+    - Gifs/Back/Erector Spinae/main/main_Flexability/Seated-Toe-Touches.gif
+    - Gifs/Back/Erector Spinae/main/main_Flexability/Sphinx-Stretch.gif
+    - Gifs/Back/Erector Spinae/main/main_Flexability/Standing-Toe-Touches.gif
+    
+         # Back Erector Spinae - main_Indor
+    - Gifs/Back/Erector Spinae/main/main_Indor/Dumbbell-Straight-Leg-Deadlift.gif
+    - Gifs/Back/Erector Spinae/main/main_Indor/dumbbell-sumo-deadlift.gif
+    
+         # Back Erector Spinae - main_Workout
+    - Gifs/Back/Erector Spinae/main/main_Workout/Dumbbell-Straight-Leg-Deadlift.gif
+    - Gifs/Back/Erector Spinae/main/main_Workout/dumbbell-sumo-deadlift.gif
+    - Gifs/Back/Erector Spinae/main/main_Workout/hyperextension.gif
+
+    # -------------------------------------------------------------------------------
+
+    # Back Erector Spinae - sub_Flexability
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Bird-Dog.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Dhanurasana-Rocking-Bow-Pose.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Kneeling-Back-Rotation-Stretch.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Kneeling-T-spine-Rotation.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Lying-Upper-Body-Rotation.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Superman-exercise.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Supine-Spinal-Twist.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Flexability/Swimming.gif
+
+
+    #   Back Erector Spinae - sub_Indor
+    
+
+
+    # Back Erector Spinae - sub_Workout
+    - Gifs/Back/Erector Spinae/sub/sub_Workout/Barbell-Pendlay-Row.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Workout/dumbbell-deadlifts.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Workout/Reverse-Hyperextensions.gif
+    - Gifs/Back/Erector Spinae/sub/sub_Workout/Weighted-Back-Extension.gif
+
+
+
+        # --------------------------------------------------------------------------------------- 
+        # ---------------------------------------------------------------------------------------  
+
+
+
+       # Back main_Flexability
+    - Gifs/Back/main/main_Flexability/Butterfly-Stretch.gif
+    - Gifs/Back/main/main_Flexability/dumbbell-cossack-squat.gif
+    - Gifs/Back/main/main_Flexability/Dumbbell-Good-Morning.gif
+    - Gifs/Back/main/main_Flexability/Half-Frog-Pose-ardha-bhekasana.gif
+    - Gifs/Back/main/main_Flexability/Happy-Baby-Pose.gif
+    - Gifs/Back/main/main_Flexability/Kneeling-Hip-Flexor-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Kneeling-Leg-Out-Adductor-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Lying-glute-stretch.gif
+    - Gifs/Back/main/main_Flexability/Piriformis-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Reverse-Dips.gif
+    - Gifs/Back/main/main_Flexability/Seated-Adductor-Groin-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Seated-Hamstring-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Seated-Straight-Leg-Calf-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Seated-Toe-Touches.gif
+    - Gifs/Back/main/main_Flexability/Standing-Cross-Leg-Hamstring-Stretch.gif
+    - Gifs/Back/main/main_Flexability/Standing-Toe-Touches.gif
+    - Gifs/Back/main/main_Flexability/Swimming.gif
+    - Gifs/Back/main/main_Flexability/Upavistha-Konasana.gif
+
+    # Back main_Indor
+    - Gifs/Back/main/main_Indor/Chin-Up.gif 
+    - Gifs/Back/main/main_Indor/Kettlebell-Bent-Over-Row.gif 
+    - Gifs/Back/main/main_Indor/Pull-up.gif
+  
+      # Back main_Workout
+    - Gifs/Back/main/main_Workout/Assisted-Pull-up.gif
+    - Gifs/Back/main/main_Workout/Barbell-Deadlift.gif
+    - Gifs/Back/main/main_Workout/Barbell-Sumo-Deadlift.gif
+    - Gifs/Back/main/main_Workout/Cable-Rear-Pulldown.gif
+    - Gifs/Back/main/main_Workout/close-grip-cable-row.gif
+    - Gifs/Back/main/main_Workout/Close-Grip-Lat-Pulldown.gif
+    - Gifs/Back/main/main_Workout/hyperextension.gif
+    - Gifs/Back/main/main_Workout/Lat-Pulldown.gif
+    - Gifs/Back/main/main_Workout/Reverse-Grip-Machine-Row.gif
+    - Gifs/Back/main/main_Workout/Reverse-Lat-Pulldown.gif
+    - Gifs/Back/main/main_Workout/Seated-Cable-Rope-Row.gif
+    - Gifs/Back/main/main_Workout/Seated-Cable-Row.gif
+    - Gifs/Back/main/main_Workout/t-bar-rows.gif
+
+
+
+        # ---------------------------------------------------------------------------------------
+
+    # Back sub_Flexability
+    - Gifs/Back/sub/sub_Flexability/Bodyweight-Windmill.gif
+    - Gifs/Back/sub/sub_Flexability/Foam-Roller-Lat-Stretch.gif
+    - Gifs/Back/sub/sub_Flexability/Supine-Spinal-Twist.gif
+
+    # Back sub_Indor
+    - Gifs/Back/sub/sub_Indor/Isometric-Pull-Up.gif
+
+    # Back sub_Workout
+    - Gifs/Back/sub/sub_Workout/Barbell-Bent-Over-Row.gif
+    - Gifs/Back/sub/sub_Workout/Close-Grip-Chin-Up.gif
+    - Gifs/Back/sub/sub_Workout/commander-pull-up.gif
+    - Gifs/Back/sub/sub_Workout/Dumbbell-Row.gif
+    - Gifs/Back/sub/sub_Workout/Dumbbell-Seal-Row.gif
+    - Gifs/Back/sub/sub_Workout/Isometric-Pull-Up.gif
+    - Gifs/Back/sub/sub_Workout/Kettlebell-Bent-Over-Row.gif
+    - Gifs/Back/sub/sub_Workout/Lever-Reverse-T-Bar-Row.gif
+    - Gifs/Back/sub/sub_Workout/Muscle-up-vertical-bar.gif
+    - Gifs/Back/sub/sub_Workout/Reverse-Grip-Barbell-Row.gif
+    - Gifs/Back/sub/sub_Workout/Seated-Row-Machine.gif
+
+        # --------------------------------------------------------------------------------------- 
+        # ---------------------------------------------------------------------------------------  
+    
+# -------------------------------------------------------------------------------
+
+    # Biceps - main_Indor
+    - Gifs/Biceps/main/main_Indor/Band-Biceps-Curl.gif
+    - Gifs/Biceps/main/main_Indor/Hammer-Curl-with-Resistance-Band.gif
+    
+    # Biceps - main_Workout
+    - Gifs/Biceps/main/main_Workout/Close-Grip-Z-Bar-Curl.gif
+    - Gifs/Biceps/main/main_Workout/Dumbbell-Curl.gif
+    - Gifs/Biceps/main/main_Workout/Lever-Preacher-Curl.gif
+    - Gifs/Biceps/main/main_Workout/Seated-Hammer-Curl.gif
+    - Gifs/Biceps/main/main_Workout/Z-Bar-Curl.gif
+    - Gifs/Biceps/main/main_Workout/Z-Bar-Preacher-Curl.gif
+    
+    # Biceps - sub_Workout
+    - Gifs/Biceps/sub/sub_Workout/cable-curl.gif
+    - Gifs/Biceps/sub/sub_Workout/Concentration-Curl.gif
+    - Gifs/Biceps/sub/sub_Workout/Dumbbell-Preacher-Curl.gif
+    - Gifs/Biceps/sub/sub_Workout/rope-bicep-curls.gif
+
+# -------------------------------------------------------------------------------
+
+    # Biceps/Triceps - main_Flexability
+    - Gifs/Biceps/Triceps/main/main_Flexability/Reverse-Dips.gif
+    
+    # Biceps/Triceps - main_Indor
+    - Gifs/Biceps/Triceps/main/main_Indor/Body-Ups.gif
+    - Gifs/Biceps/Triceps/main/main_Indor/Diamond-Push-up.gif
+    - Gifs/Biceps/Triceps/main/main_Indor/Forearm-Push-up.gif
+    - Gifs/Biceps/Triceps/main/main_Indor/Knee-Push-Up.gif
+    - Gifs/Biceps/Triceps/main/main_Indor/Triceps-Dips-on-Floor.gif
+    - Gifs/Biceps/Triceps/main/main_Indor/Triceps-dips-on-floors.gif
+    
+    # Biceps/Triceps - main_Workout
+    - Gifs/Biceps/Triceps/main/main_Workout/Asisted-Triceps-Dips.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/Band-Pushdown.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/Cable-Tricep-Kickback.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/Lever-Overhand-Triceps-Dip.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/One-Arm-Reverse-Push-Down.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/One-arm-triceps-pushdown.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/Pushdown.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/Reverse-Grip-Pushdown.gif
+    - Gifs/Biceps/Triceps/main/main_Workout/Rope-Pushdown.gif
+    
+    # Biceps/Triceps - sub_Indor
+    - Gifs/Biceps/Triceps/sub/sub_Indor/Bench-Dips.gif
+    - Gifs/Biceps/Triceps/sub/sub_Indor/Cross-Arm-Push-up.gif
+    - Gifs/Biceps/Triceps/sub/sub_Indor/Stretch-With-Towel.gif
+    
+    # Biceps/Triceps - sub_Workout
+    - Gifs/Biceps/Triceps/sub/sub_Workout/Cable-Rope-Overhead-Triceps-Extension.gif
+    - Gifs/Biceps/Triceps/sub/sub_Workout/Dumbbell-Incline-Two-Arm-Extension.gif
+    - Gifs/Biceps/Triceps/sub/sub_Workout/High-Pulley-Overhead-Tricep-Extension.gif
+    - Gifs/Biceps/Triceps/sub/sub_Workout/parallel-bar-dip.gif
+    - Gifs/Biceps/Triceps/sub/sub_Workout/Reverse-Grip-EZ-Bar-Curl.gif
+    - Gifs/Biceps/Triceps/sub/sub_Workout/Seated-Dumbbell-Triceps-Extension.gif
+    - Gifs/Biceps/Triceps/sub/sub_Workout/Triceps-Dips.gif
+
+# -------------------------------------------------------------------------------
+
+# -------------------------------------------------------------------------------
+
+    # Cardio/Abs - main_Flexability
+    - Gifs/Cardio/Abs/main/main_Flexability/Half-Frog-Pose-ardha-bhekasana.gif
+    
+    # Cardio/Abs - main_Indor
+    - Gifs/Cardio/Abs/main/main_Indor/4-Point-Tummy-Vacuum-Exercise.gif
+    - Gifs/Cardio/Abs/main/main_Indor/abdominal-stretch.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Crunch-With-Leg-Raise.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Crunch.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Flutter-Kicks.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Leg-Pull-In-Knee-ups.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Leg-Raise-Dragon-Flag.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Lying-Knee-Raise.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Lying-Scissor-Kick.gif
+    - Gifs/Cardio/Abs/main/main_Indor/plank.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Seated-Bench-Leg-Pull-in.gif
+    - Gifs/Cardio/Abs/main/main_Indor/Sit-ups.gif
+    
+    # Cardio/Abs - main_Workout
+    - Gifs/Cardio/Abs/main/main_Workout/Captains-Chair-Leg-Raise.gif
+    - Gifs/Cardio/Abs/main/main_Workout/Decline-Sit-up.gif
+    - Gifs/Cardio/Abs/main/main_Workout/Full-Crunch-Machine.gif
+    - Gifs/Cardio/Abs/main/main_Workout/Leg-Raise-Dragon-Flag.gif
+    - Gifs/Cardio/Abs/main/main_Workout/plank.gif
+    - Gifs/Cardio/Abs/main/main_Workout/Seated-Bench-Leg-Pull-in.gif
+    - Gifs/Cardio/Abs/main/main_Workout/Sit-ups.gif
+    
+    # Cardio/Abs - sub_Flexability
+    - Gifs/Cardio/Abs/sub/sub_Flexability/Dhanurasana-Rocking-Bow-Pose.gif
+    - Gifs/Cardio/Abs/sub/sub_Flexability/Fish-Pose-Matsyasana.gif
+    - Gifs/Cardio/Abs/sub/sub_Flexability/Glute-Bridge-.gif
+    - Gifs/Cardio/Abs/sub/sub_Flexability/Side-Bridge.gif
+    - Gifs/Cardio/Abs/sub/sub_Flexability/Side-Plank-Hip-Adduction-Copenhagen-adduction.gif
+    
+    # Cardio/Abs - sub_Indor
+    - Gifs/Cardio/Abs/sub/sub_Indor/Ab-Wheel-Rollout.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Cross-Body-Mountain-Climber.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Dead-Bug.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Half-Cross-Crunch.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Half-Wipers.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Inchworm.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Long-Arm-Crunch.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Mountain-climber.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/Tuck-Crunch.gif
+    - Gifs/Cardio/Abs/sub/sub_Indor/weightedsitups.gif
+    
+    # Cardio/Abs - sub_Workout
+    - Gifs/Cardio/Abs/sub/sub_Workout/Ab-Wheel-Rollout.gif
+    - Gifs/Cardio/Abs/sub/sub_Workout/Kneeling-Cable-Crunch.gif
+    - Gifs/Cardio/Abs/sub/sub_Workout/Standing-Cable-Crunch.gif
+    - Gifs/Cardio/Abs/sub/sub_Workout/Weighted-Crunch.gif
+    - Gifs/Cardio/Abs/sub/sub_Workout/Weighted-Front-Plank.gif
+    - Gifs/Cardio/Abs/sub/sub_Workout/weightedsitups.gif
+
+# -------------------------------------------------------------------------------
+
+    # Cardio - main_Indor
+    - Gifs/Cardio/main/main_Indor/Briskly-Walking.gif
+    - Gifs/Cardio/main/main_Indor/Fast-Feet-Run.gif
+    - Gifs/Cardio/main/main_Indor/Jump-Rope.gif
+    - Gifs/Cardio/main/main_Indor/Jumping-jack.gif
+    - Gifs/Cardio/main/main_Indor/Run.gif
+    - Gifs/Cardio/main/main_Indor/sprint.gif
+    - Gifs/Cardio/main/main_Indor/Walking.gif
+    
+    # Cardio - main_Workout
+    - Gifs/Cardio/main/main_Workout/Assault-Air-Runner.gif
+    - Gifs/Cardio/main/main_Workout/Bike.gif
+    - Gifs/Cardio/main/main_Workout/Elliptical-Machine.gif
+    - Gifs/Cardio/main/main_Workout/Walk-Wave-Machine.gif
+    - Gifs/Cardio/main/main_Workout/Walking-on-Stepmill.gif
+
+# -------------------------------------------------------------------------------
+
+    # Cardio/Neck - main_Flexability
+    - Gifs/Cardio/Neck/main_Flexability/Floor-Hyperextension-1.gif
+    - Gifs/Cardio/Neck/main_Flexability/Front-and-Back-Neck-Stretch.gif
+    - Gifs/Cardio/Neck/main_Flexability/Prone-Cervical-Extension.gif
+    - Gifs/Cardio/Neck/main_Flexability/Side-Push-Neck-Stretch.gif
+    - Gifs/Cardio/Neck/main_Flexability/30229.gif
+    
+    # Cardio/Neck - main_Indor
+    - Gifs/Cardio/Neck/main_Indor/Dumbbell-Seated-Gittleson-Shrug.gif
+    
+    # Cardio/Neck - main_Workout
+    - Gifs/Cardio/Neck/main_Workout/Dumbbell-Seated-Gittleson-Shrug.gif
+    - Gifs/Cardio/Neck/main_Workout/Lying-Weighted-Neck-Extension.gif
+    - Gifs/Cardio/Neck/main_Workout/Lying-Weighted-Neck-Flexion.gif
+    
+    # Cardio/Neck - sub_Workout
+    - Gifs/Cardio/Neck/sub_Workout/Lying-Weighted-Lateral-Neck-Flexion.gif
+    - Gifs/Cardio/Neck/sub_Workout/Weighted-Lying-Neck-Extension.gif
+    - Gifs/Cardio/Neck/sub_Workout/Weighted-Lying-Neck-Flexion.gif
+
+# -------------------------------------------------------------------------------
+
+    # Cardio - sub_Indor
+    - Gifs/Cardio/sub/sub_Indor/Boxing-Right-Cross-with-boxing-bag.gif
+    - Gifs/Cardio/sub/sub_Indor/Hook-Kick-Kickboxing-with-boxing-bag.gif
+    - Gifs/Cardio/sub/sub_Indor/Jab-Boxing.gif
+    - Gifs/Cardio/sub/sub_Indor/Punches.gif
+    - Gifs/Cardio/sub/sub_Indor/Right-Cross-Boxing.gif
+    - Gifs/Cardio/sub/sub_Indor/Right-Uppercut-Boxing.gif
+    - Gifs/Cardio/sub/sub_Indor/shadow-boxing-workout.gif
+    
+    # Cardio - sub_Workout
+    - Gifs/Cardio/sub/sub_Workout/Boxing-Right-Cross-with-boxing-bag.gif
+    - Gifs/Cardio/sub/sub_Workout/Dumbbell-Burpees.gif
+
+# -------------------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------------------
+
+    # Chest - main_Flexability
+    - Gifs/Chest/main/main_Flexability/Seated-Chest-Stretch.gif
+    - Gifs/Chest/main/main_Flexability/Shoulder-Stretch-Behind-Back.gif
+    
+    # Chest - main_Indor
+    - Gifs/Chest/main/main_Indor/Diamond-Push-up.gif
+    - Gifs/Chest/main/main_Indor/Forearm-Push-up.gif
+    - Gifs/Chest/main/main_Indor/Push-Up-Plus.gif
+    
+    # Chest - main_Workout
+    - Gifs/Chest/main/main_Workout/Barbell-Bench-Press.gif
+    - Gifs/Chest/main/main_Workout/Close-Grip-Bench-Press.gif
+    - Gifs/Chest/main/main_Workout/Decline-Chest-Press-Machine.gif
+    - Gifs/Chest/main/main_Workout/Dumbbell-Press-1.gif
+    - Gifs/Chest/main/main_Workout/Dumbbell-Pullover.gif
+    - Gifs/Chest/main/main_Workout/Incline-Barbell-Bench-Press.gif
+    - Gifs/Chest/main/main_Workout/Incline-Dumbbell-Press.gif
+    - Gifs/Chest/main/main_Workout/Lever-One-Arm-Chest-Press.gif
+    - Gifs/Chest/main/main_Workout/Lying-Chest-Press-Machine.gif
+    - Gifs/Chest/main/main_Workout/Pec-Deck-Fly.gif
+    - Gifs/Chest/main/main_Workout/Push-Up.gif
+    
+    # Chest - sub_Indor
+    - Gifs/Chest/sub/sub_Indor/Chest-Tap-Push-up.gif
+    - Gifs/Chest/sub/sub_Indor/Clap-Push-Up.gif
+    - Gifs/Chest/sub/sub_Indor/Finger-Push-up.gif
+    - Gifs/Chest/sub/sub_Indor/Kneeling-Push-up.gif
+    - Gifs/Chest/sub/sub_Indor/Single-Arm-Push-up.gif
+    
+    # Chest - sub_Workout
+    - Gifs/Chest/sub/sub_Workout/Assisted-Chest-Dip.gif
+    - Gifs/Chest/sub/sub_Workout/Chest-Dips.gif
+    - Gifs/Chest/sub/sub_Workout/Dumbbell-Fly.gif
+    - Gifs/Chest/sub/sub_Workout/Hammer-Press.gif
+    - Gifs/Chest/sub/sub_Workout/High-Cable-Crossover.gif
+    - Gifs/Chest/sub/sub_Workout/Incline-Chest-Fly-Machine.gif
+    - Gifs/Chest/sub/sub_Workout/Inner-Chest-Press-Machine.gif
+
+# -------------------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------------------
+
+    # Leg/Calf - main_Flexability
+    - Gifs/Leg/Calf/main_Flexability/Feet-and-Ankle-Rotation.gif
+    - Gifs/Leg/Calf/main_Flexability/Foot-and-Ankles-Stretches.gif
+    - Gifs/Leg/Calf/main_Flexability/Resistance-Band-Foot-External-Rotation.gif
+    - Gifs/Leg/Calf/main_Flexability/Seated-Straight-Leg-Calf-Stretch.gif
+    - Gifs/Leg/Calf/main_Flexability/Standing-Hamstring-Stretch.gif
+    - Gifs/Leg/Calf/main_Flexability/Standing-Wall-Calf-Stretch.gif
+    - Gifs/Leg/Calf/main_Flexability/Toe-Extensor-Stretch.gif
+    
+    # Leg/Calf - main_Workout
+    - Gifs/Leg/Calf/main_Workout/Dumbbell-Calf-Raise.gif
+    - Gifs/Leg/Calf/main_Workout/Lever-Seated-Calf-Raise.gif
+    
+    # Leg/Calf - sub_Workout
+    - Gifs/Leg/Calf/sub_Workout/Hack-Squat-Calf-Raise.gif
+    - Gifs/Leg/Calf/sub_Workout/Leg-Press-Calf-Raise.gif
+
+# -------------------------------------------------------------------------------
+
+    # Leg/Hips - main_Flexability
+    - Gifs/Leg/Hips/main_Flexability/90-90-Hip-Stretch.gif
+    - Gifs/Leg/Hips/main_Flexability/Bridge-Hip-Abduction.gif
+    - Gifs/Leg/Hips/main_Flexability/Lying-glute-stretch.gif
+    - Gifs/Leg/Hips/main_Flexability/Static-Lunge.gif
+    
+    # Leg/Hips - main_Indor
+    - Gifs/Leg/Hips/main_Indor/Dumbbell-Glute-Bridge.gif
+    - Gifs/Leg/Hips/main_Indor/Dumbbell-Good-Morning.gif
+    - Gifs/Leg/Hips/main_Indor/High-Knee-Lunge-on-Bosu-Ball.gif
+    
+    # Leg/Hips - main_Workout
+    - Gifs/Leg/Hips/main_Workout/High-Knee-Lunge-on-Bosu-Ball.gif
+    - Gifs/Leg/Hips/main_Workout/smith-machine-squat.gif
+    
+    # Leg/Hips - sub_Flexability
+    - Gifs/Leg/Hips/sub_Flexability/Adductor-Magnus-Stretch.gif
+    - Gifs/Leg/Hips/sub_Flexability/Side-Plank-Hip-Adduction-Copenhagen-adduction.gif
+    
+    # Leg/Hips - sub_Indor
+    - Gifs/Leg/Hips/sub_Indor/Standing-Hip-Abduction-1.gif
+    
+    # Leg/Hips - sub_Workout
+    - Gifs/Leg/Hips/sub_Workout/Barbell-Glute-Bridge-Two-Legs-on-Bench.gif
+    - Gifs/Leg/Hips/sub_Workout/dumbbell-cossack-squat.gif
+    - Gifs/Leg/Hips/sub_Workout/Reverse-Hyperextensions.gif
+    - Gifs/Leg/Hips/sub_Workout/Single-Leg-Dumbbell-Hip-Thrust.gif
+
+# -------------------------------------------------------------------------------
+
+    # Leg - main_Flexability
+    - Gifs/Leg/main/main_Flexability/Butterfly-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/dumbbell-cossack-squat.gif
+    - Gifs/Leg/main/main_Flexability/Half-Frog-Pose-ardha-bhekasana.gif
+    - Gifs/Leg/main/main_Flexability/Happy-Baby-Pose.gif
+    - Gifs/Leg/main/main_Flexability/Kneeling-Hip-Flexor-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Kneeling-Leg-Out-Adductor-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Lying-glute-stretch.gif
+    - Gifs/Leg/main/main_Flexability/Piriformis-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Seated-Adductor-Groin-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Seated-Hamstring-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Seated-Straight-Leg-Calf-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Seated-Toe-Touches.gif
+    - Gifs/Leg/main/main_Flexability/Standing-Cross-Leg-Hamstring-Stretch.gif
+    - Gifs/Leg/main/main_Flexability/Standing-Toe-Touches.gif
+    - Gifs/Leg/main/main_Flexability/Upavistha-Konasana.gif
+    
+    # Leg - main_Indor
+    - Gifs/Leg/main/main_Indor/BODYWEIGHT-SUMO-SQUAT.gif
+    - Gifs/Leg/main/main_Indor/Dumbbell-Bulgarian-Split-Squat.gif
+    
+    # Leg - main_Workout
+    - Gifs/Leg/main/main_Workout/HiP-ABDUCTION-MACHINE.gif
+    - Gifs/Leg/main/main_Workout/HIP-ADDUCTION-MACHINE.gif
+    - Gifs/Leg/main/main_Workout/Leg-Curl.gif
+    - Gifs/Leg/main/main_Workout/LEG-EXTENSION.gif
+    - Gifs/Leg/main/main_Workout/Leg-Press.gif
+    - Gifs/Leg/main/main_Workout/Lever-Horizontal-Leg-Press.gif
+    - Gifs/Leg/main/main_Workout/Reverse-Hack-Squat.gif
+    - Gifs/Leg/main/main_Workout/Seated-Leg-Curl.gif
+    - Gifs/Leg/main/main_Workout/Single-Leg-Extension.gif
+    - Gifs/Leg/main/main_Workout/Single-Leg-Press.gif
+    - Gifs/Leg/main/main_Workout/Sled-Hack-Squat.gif
+    - Gifs/Leg/main/main_Workout/smith-machine-squat.gif
+    - Gifs/Leg/main/main_Workout/Standing-Single-Leg-Curl-Machine.gif
+    
+    # Leg - sub_Flexability
+    - Gifs/Leg/sub/sub_Flexability/ATG-Split-Squat.gif
+    - Gifs/Leg/sub/sub_Flexability/Crouching-Heel-Back-Calf-Stretch.gif
+    - Gifs/Leg/sub/sub_Flexability/INNER-THIGH-SIDE-STRETCH.gif
+    - Gifs/Leg/sub/sub_Flexability/Kneeling-Quad-Stretch.gif
+    - Gifs/Leg/sub/sub_Flexability/Squat-mobility-Complex.gif
+    - Gifs/Leg/sub/sub_Flexability/STANDING-KNEE-HUGS.gif
+    - Gifs/Leg/sub/sub_Flexability/Standing-Quadriceps-Stretch.gif
+    
+    # Leg - sub_Indor
+    - Gifs/Leg/sub/sub_Indor/bodyweight-walking-lunge.gif
+    - Gifs/Leg/sub/sub_Indor/Bulgarian-Jump-Squat.gif
+    - Gifs/Leg/sub/sub_Indor/Dumbbell-Jump-Squat.gif
+    - Gifs/Leg/sub/sub_Indor/Dumbbell-Squat.gif
+    - Gifs/Leg/sub/sub_Indor/Dumbbell-Straight-Leg-Deadlift.gif
+    - Gifs/Leg/sub/sub_Indor/dumbbell-sumo-deadlift.gif
+    - Gifs/Leg/sub/sub_Indor/High-Knee-Lunge-on-Bosu-Ball.gif
+    - Gifs/Leg/sub/sub_Indor/High-Knee-Run.gif
+    - Gifs/Leg/sub/sub_Indor/Jump-Squat.gif
+    - Gifs/Leg/sub/sub_Indor/Jumping-jack.gif
+    - Gifs/Leg/sub/sub_Indor/Pistol-Squat.gif
+    - Gifs/Leg/sub/sub_Indor/power-lunge.gif
+    - Gifs/Leg/sub/sub_Indor/Static-Lunge.gif
+    - Gifs/Leg/sub/sub_Indor/Sumo-Plie-Dumbbell-Squat.gif
+    
+    # Leg - sub_Workout
+    - Gifs/Leg/sub/sub_Workout/Barbell-Lunge.gif
+    - Gifs/Leg/sub/sub_Workout/BARBELL-SQUAT.gif
+    - Gifs/Leg/sub/sub_Workout/bodyweight-walking-lunge.gif
+    - Gifs/Leg/sub/sub_Workout/Dumbbell-Goblet-Squat.gif
+    - Gifs/Leg/sub/sub_Workout/dumbbell-lunges.gif
+    - Gifs/Leg/sub/sub_Workout/Dumbbell-Rear-Lunge.gif
+    - Gifs/Leg/sub/sub_Workout/Dumbbell-Squat.gif
+    - Gifs/Leg/sub/sub_Workout/Lever-Single-Leg-Curl.gif
+
+# -------------------------------------------------------------------------------
+
+
+# -------------------------------------------------------------------------------
+
+    # Shoulder - main_Flexability
+    - Gifs/Shoulder/main/main_Flexability/9334.gif
+    - Gifs/Shoulder/main/main_Flexability/21648.gif
+    - Gifs/Shoulder/main/main_Flexability/21829.gif
+    - Gifs/Shoulder/main/main_Flexability/Band-pull-apart.gif
+    - Gifs/Shoulder/main/main_Flexability/Kneeling-Back-Rotation-Stretch.gif
+    - Gifs/Shoulder/main/main_Flexability/Wall-Supported-Arm-Raises.gif
+    - Gifs/Shoulder/main/main_Flexability/25517.gif
+    
+    # Shoulder - main_Indor
+    - Gifs/Shoulder/main/main_Indor/Arm-Circles_Shoulders.gif
+    - Gifs/Shoulder/main/main_Indor/Banded-Shoulder-External-Rotation.gif
+    - Gifs/Shoulder/main/main_Indor/Bodyweight-Military-Press.gif
+    - Gifs/Shoulder/main/main_Indor/Push-Up-Plus.gif
+    - Gifs/Shoulder/main/main_Indor/Scapula-Dips.gif
+    - Gifs/Shoulder/main/main_Indor/Scapula-Pull-up.gif
+    
+    # Shoulder - main_Workout
+    - Gifs/Shoulder/main/main_Workout/45-Degree-Incline-Row.gif
+    - Gifs/Shoulder/main/main_Workout/Arm-Circles_Shoulders.gif
+    - Gifs/Shoulder/main/main_Workout/Arnold-Press.gif
+    - Gifs/Shoulder/main/main_Workout/Band-pull-apart.gif
+    - Gifs/Shoulder/main/main_Workout/Banded-Shoulder-External-Rotation.gif
+    - Gifs/Shoulder/main/main_Workout/Dumbbell-Incline-T-Raise.gif
+    - Gifs/Shoulder/main/main_Workout/Dumbbell-Reverse-Fly.gif
+    - Gifs/Shoulder/main/main_Workout/Dumbbell-Shoulder-Press.gif
+    - Gifs/Shoulder/main/main_Workout/Dumbbell-Shrug.gif
+    - Gifs/Shoulder/main/main_Workout/Half-Kneeling-High-Cable-Row-Rope.gif
+    - Gifs/Shoulder/main/main_Workout/Kneeling-Landmine-Press.gif
+    - Gifs/Shoulder/main/main_Workout/Leaning-Cable-Lateral-Raise.gif
+    - Gifs/Shoulder/main/main_Workout/Lever-Shoulder-Press.gif
+    - Gifs/Shoulder/main/main_Workout/Rear-Delt-Machine-Flys.gif
+    - Gifs/Shoulder/main/main_Workout/Two-Arm-Cable-Front-Raise.gif
+    
+    # Shoulder - sub_Flexability
+    - Gifs/Shoulder/sub/sub_Flexability/Seated-Ballerina.gif
+    - Gifs/Shoulder/sub/sub_Flexability/Seated-Scapular-Retraction-Exercise.gif
+    - Gifs/Shoulder/sub/sub_Flexability/Swimming.gif
+    
+    # Shoulder - sub_Indor
+    - Gifs/Shoulder/sub/sub_Indor/Resistance-Band-Bent-Over-Rear-Delt-Fly.gif
+    - Gifs/Shoulder/sub/sub_Indor/Roll-Front-Shoulder-and-Chest-Lying-on-Floor.gif
+    
+    # Shoulder - sub_Workout
+    - Gifs/Shoulder/sub/sub_Workout/Barbell-Upright-Row.gif
+    - Gifs/Shoulder/sub/sub_Workout/Behind-The-Back-Barbell-Shrug-Reverse-Barbell-Shrug.gif
+    - Gifs/Shoulder/sub/sub_Workout/Bent-Over-Barbell-Reverse-Raise.gif
+    - Gifs/Shoulder/sub/sub_Workout/cable-rear-delt-fly.gif
+    - Gifs/Shoulder/sub/sub_Workout/Dumbbell-Front-Raise.gif
+    - Gifs/Shoulder/sub/sub_Workout/Kneeling-High-Pulley-Row.gif
+    - Gifs/Shoulder/sub/sub_Workout/Lateral-Raise-Machine.gif
+    - Gifs/Shoulder/sub/sub_Workout/Scapula-Pull-up.gif
+    - Gifs/Shoulder/sub/sub_Workout/Wide-Grip-Barbell-Bent-Over-Row-Plus.gif
+
+# -------------------------------------------------------------------------------
+
+
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/to/resolution-aware-images
+
+  # For details regarding adding assets from package dependencies, see
+  # https://flutter.dev/to/asset-from-package
+
+  # To add custom fonts to your application, add a fonts section here,
+  # in this "flutter" section. Each entry in this list should have a
+  # "family" key with the font family name, and a "fonts" key with a
+  # list giving the asset and other descriptors for the font. For
+  # example:
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700
+  #
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/to/font-from-package

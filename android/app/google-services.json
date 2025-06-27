@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1026803930557",
+    "project_id": "nine-workout",
+    "storage_bucket": "nine-workout.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026803930557:android:0bb120e82f3420aee56ed4",
+        "android_client_info": {
+          "package_name": "com.youssefuzumaki.nineworkout"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAjlwdPupc3ADBKZ3hK4rvHrf7mXWkj7IY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
